@@ -5,14 +5,12 @@ class ContaBancaria {
     private $numeroConta;
     private $saldo;
 
-    // saldo sempre começa em 0
     public function __construct($titular, $numeroConta) {
         $this->titular = $titular;
         $this->numeroConta = $numeroConta;
         $this->saldo = 0;
     }
 
-    // getters e setters (sem setSaldo, o saldo só muda por depositar e sacar)
     public function getTitular() {
         return $this->titular;
     }
@@ -78,11 +76,9 @@ class BancoApp {
         $conta1->sacar(200);
         $conta1->exibirInformacoes();
 
-        // saque maior que o saldo, deve dar saldo insuficiente
         $conta2->sacar(5000);
         $conta2->exibirInformacoes();
 
-        // depósito negativo, deve ser recusado
         $conta1->depositar(-50);
         $conta1->exibirInformacoes();
     }
